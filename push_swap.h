@@ -24,6 +24,14 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+
+typedef struct s_stack_b
+{
+	int				data;
+	int				index;
+	struct s_list	*next;
+}	t_stack_b;
+
 //UTILS
 int			ft_atoi(char *str);
 long int	ft_atoi_plus(char *str);

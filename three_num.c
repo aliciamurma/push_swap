@@ -22,14 +22,5 @@ void	ft_three_num(t_list **list)
 	temp = *list;
 	min = ft_min(*list);
 	max = ft_max(*list);
-	while (temp)
-	{
-		if (argv[1] > argv[2] && argv[2] < argv[3]);
-			ft_sa(list);
-		else if (argv[1] > argv[2] && argv[2] > argv[3] && argv[3] > argv[4])
-		{
-			/* code */
-		}
-		temp = temp->next;
-	}
+	ft_sa(list);
 }

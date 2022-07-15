@@ -44,7 +44,6 @@ t_list	*ft_create_list(int argc, char **argv)
 		nodo->data = ft_atoi(argv[start]);
 		temp->next = nodo;
 		temp = temp->next;
-		printf("Nuevo elemento lista con index %d\n",temp->index );
 		start++;
 	}
 	temp->next = NULL;
@@ -53,8 +52,12 @@ t_list	*ft_create_list(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_list	*list;
+	t_list		*list;
+	t_stack_b	*stack_b;
 
+	stack_b = (t_stack_b *)malloc(sizeof(t_stack_b));
+	if (!stack_b)
+		return (0);
 	ft_errors_numbers(argc, argv);
 	list = ft_create_list(argc, argv);
 	if  (argc <= 4)
@@ -68,5 +71,6 @@ int	main(int argc, char **argv)
 		printf("%d\n", list->data);
 		list = list->next;
 	}
+
 	return (0);
 }

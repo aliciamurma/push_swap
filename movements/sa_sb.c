@@ -18,17 +18,14 @@
 t_list	*ft_sa(t_list **list)
 {
 	t_list	*temp;
+	int		data;
 
 	temp = *list;
 	if (temp->next == NULL)
 		return (*list);
-	temp->next = temp;
-	temp = temp->next->next;
+	data = temp->data;
+	temp->data = temp->next->data;
+	temp->next->data = data;
 	write(1, "sa\n", 3);
-	while(temp)
-	{
-		printf("%d\n", temp->data);
-		temp = temp->next;
-	}
 	return (*list);
 }
