@@ -52,9 +52,10 @@ int			main(int argc, char **argv);
 t_list		*ft_create_list(int argc, char **argv);
 int			ft_min(t_list *list);
 int			ft_max(t_list *list);
-void		ft_three_num(t_list **list);
+void		ft_three_num(t_list **list, t_stack_b **stack_b);
 
 //MOVIMIENTOS EN LOS STACKS
-t_list	*ft_sa(t_list **list);
+t_list		*ft_sa(t_list **list);
+t_stack_b	*ft_sb(t_stack_b **stack_b);
 
 #endif

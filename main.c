@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 	ft_errors_numbers(argc, argv);
 	list = ft_create_list(argc, argv);
 	if  (argc <= 4)
-		ft_three_num(&list);
+		ft_three_num(&list, &stack_b);
 /*	if  (argc <= 6)
 		ft_five_argc();
 	if  (argc > 6)

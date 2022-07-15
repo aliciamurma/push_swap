@@ -29,3 +29,18 @@ t_list	*ft_sa(t_list **list)
 	write(1, "sa\n", 3);
 	return (*list);
 }
+
+t_stack_b	*ft_sb(t_stack_b **stack_b)
+{
+	t_stack_b	*temp;
+	int		data;
+
+	temp = *stack_b;
+	if (temp->next == NULL)
+		return (*stack_b);
+	data = temp->data;
+	temp->data = temp->next->data;
+	temp->next->data = data;
+	write(1, "sa\n", 3);
+	return (*stack_b);
+}
