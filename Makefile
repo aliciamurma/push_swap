@@ -14,7 +14,7 @@ HEADER = push_swap.h
 
 NAME = push_swap
 
-SRC = main.c check.c pass_to_int.c utils/ft_atoi.c utils/ft_itoa.c utils/ft_putstr.c utils/ft_strncmp.c
+SRC = main.c check.c min_max.c three_num.c movements/sa_sb.c utils/ft_atoi.c utils/ft_itoa.c utils/ft_putstr.c utils/ft_strncmp.c
 OBJ = $(SRC:.c=.o)
 
 DEPS = $(SRC:.c=.d)

@@ -35,12 +35,11 @@ void	ft_errors_numbers(int argc, char **argv)
 		cont1++;
 	}
 	ft_int_max_value(argv);
-	ft_errors_repeat(argc, argv);
+	ft_errors_repeat(argv);
 }
 
-void	ft_errors_repeat(int argc, char **argv)
+void	ft_errors_repeat(char **argv)
 {
-	(void) argc;
 	int	cont1;
 	int	cont2;
 
