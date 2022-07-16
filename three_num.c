@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	ft_three_num(t_list **list, t_stack_b **stack_b)
 {
@@ -19,9 +18,14 @@ void	ft_three_num(t_list **list, t_stack_b **stack_b)
 	int		min;
 	int		max;
 
+	(void) stack_b;
 	temp = *list;
 	min = ft_min(*list);
 	max = ft_max(*list);
-	ft_sa(list);
-	ft_sb(stack_b);
+	//ft_sa(list);
+	//ft_sb(stack_b);
+	//ft_pa(list, stack_b);
+	//ft_pb(list, stack_b);
+	//ft_ra(list);
+	ft_rrb(stack_b);
 }

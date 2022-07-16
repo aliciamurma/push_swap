@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 //SA INTERCAMBIA LOS DOS PRIMEROS ELEMENTOS ENCIMA DEL STACK A
 //NO HACE NADA SI HAY UNO O MENOS ELEMENTOS
@@ -43,4 +42,10 @@ t_stack_b	*ft_sb(t_stack_b **stack_b)
 	temp->next->data = data;
 	write(1, "sa\n", 3);
 	return (*stack_b);
+}
+
+void	ft_sa_sb(t_list **list, t_stack_b **stack_b)
+{
+	ft_sb(stack_b);
+	ft_sa(list);
 }
