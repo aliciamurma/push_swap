@@ -12,41 +12,53 @@
 
 #include "../push_swap.h"
 
-//PA TOMA EL PRIMER ELEMENTO DEL STACK B Y LO PONE ENCIMA DEL STACK A
-//NO HACE NADA SI EL STACK B ESTA VACIO
+//PA TOMA EL PRIMER ELEMENTO DEL t_stack B Y LO PONE ENCIMA DEL t_stack A
+//NO HACE NADA SI EL t_stack B ESTA VACIO
 
-void	ft_pa(t_list **list, t_stack_b **stack_b)
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
-	t_list		*temp;
-	t_stack_b	*temp_b;
-	int			data;
+	t_stack		*temp_a;
+	t_stack		*temp_b;
 
-	temp = *list;
-	if (temp->next == NULL)
-		return ;
+	temp_a = *stack_a;
 	temp_b = *stack_b;
 	if (temp_b->next == NULL)
 		return ;
-	data = temp->data;
-	temp->data = temp_b->data;
-	temp_b->data = data;
+	*stack_a = *stack_b;
+	*stack_b = temp_b->next;
+	temp_b->next = temp_a->next;
 	write (1, "pa\n", 3);
 }
-
-void	ft_pb(t_list **list, t_stack_b **stack_b)
+/*
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	t_list		*temp;
-	t_stack_b	*temp_b;
-	int			data;
+	t_stack		*temp_a;
+	t_stack		*temp_a2;
+	t_stack		*temp_b;
 
-	temp = *list;
-	if (temp->next == NULL)
+	temp_a = *stack_a;
+	temp_a2 = *stack_a;
+	temp_b = *stack_b;
+
+	temp_a->next = temp_b->next;
+	*stack_b = temp_a;
+	temp_a = temp_a2->next;
+
+	write (1, "pb\n", 3);
+}
+*/
+
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack		*temp_a;
+	t_stack		*temp_b;
+
+	temp_a = *stack_a;
+	if (temp_a->next == NULL)
 		return ;
 	temp_b = *stack_b;
-	if (temp_b->next == NULL)
-		return ;
-	data = temp_b->data;
-	temp_b->data = temp->data;
-	temp->data = data;
+	*stack_b = *stack_a;
+	*stack_a = temp_a->next;
+	temp_a->next = temp_b->next;
 	write (1, "pb\n", 3);
 }

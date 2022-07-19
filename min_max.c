@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 #include <stdio.h>
-int	ft_max(t_list *list)
+int	ft_max(t_stack *stack_a)
 {
-	t_list	*temp;
+	t_stack	*temp;
 	int		nbr;
 
-	temp = list;
+	temp = stack_a;
 	nbr = 0;
 	while (temp)
 	{
@@ -27,7 +27,7 @@ int	ft_max(t_list *list)
 			nbr = temp->data;
 		temp = temp->next;
 	}
-	temp = list;
+	temp = stack_a;
 	while (temp)
 	{
 		if (nbr == temp->data)
@@ -37,12 +37,12 @@ int	ft_max(t_list *list)
 	return  (0);
 }
 
-int	ft_min(t_list *list)
+int	ft_min(t_stack *stack_a)
 {
-	t_list	*temp;
+	t_stack	*temp;
 	int		nbr;
 
-	temp = list;
+	temp = stack_a;
 	nbr = 0;
 	while (temp)
 	{
@@ -52,7 +52,7 @@ int	ft_min(t_list *list)
 			nbr = temp->data;
 		temp = temp->next;
 	}
-	temp = list;
+	temp = stack_a;
 	while (temp)
 	{
 		if (temp->data == nbr)

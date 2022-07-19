@@ -15,12 +15,12 @@
 
 //RA DESPLAZA HACIA ARRIBA TODOS LOS ELEMENTOS DEL STACK A UNA POSICION
 //EL PRIMER ELEMENTO SE CONVIERTE EN EL ULTIMO
-void	ft_ra(t_list **list)
+void	ft_ra_help(t_stack **stack_a)
 {
-	t_list	*temp;
+	t_stack	*temp;
 	int		data;
 
-	temp = *list;
+	temp = *stack_a;
 	if (temp->next == NULL)
 		return ;
 	data = temp->data;
@@ -32,9 +32,15 @@ void	ft_ra(t_list **list)
 	temp->data = data;
 }
 
-void	ft_rb(t_stack_b **stack_b)
+void	ft_ra(t_stack **stack_a)
 {
-	t_stack_b	*temp;
+	ft_ra_help(stack_a);
+	write (1, "ra\n", 3);
+}
+
+void	ft_rb_help(t_stack **stack_b)
+{
+	t_stack	*temp;
 	int			data;
 
 	temp = *stack_b;
@@ -49,53 +55,15 @@ void	ft_rb(t_stack_b **stack_b)
 	temp->data = data;
 }
 
-void	ft_rr(t_list **list, t_stack_b **stack_b)
+void	ft_rb(t_stack **stack_b)
 {
-	ft_ra(list);
-	ft_rb(stack_b);
+	ft_rb_help(stack_b);
+	write (1, "rb\n", 3);
 }
 
-//RRA DESPLAZA HACIA ABAJO TODOS LOS ELEMENTOS DEL STACK A UNA POSICION
-//EL ULTIMO ELEMENTO SE CONVIERTE EN EL PRIMERO
-//OJO QUE *LIST ES EL ENCABEZADO, NO LA LISTA ENTERA
-//HACEMOS QUE EL ULTIMO ELEMENTO SENALE AL ENCABEZADO Y QUE ESTE ENCABEZADO
-//SEA IGUAL A TEMP, PARA QUE SIGA APUNTANDO AL RESTO DE ELEMENTOS SIN MOVERLOS
-void	ft_rra(t_list **list)
+void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
-	t_list	*temp;
-	t_list	*last;
-
-	temp = *list;
-	while (temp->next)
-	{
-		if (temp->next->next == NULL)
-			last = temp;
-		temp = temp->next;
-	}
-	temp->next = *list;
-	*list = temp;
-	last->next = NULL;
-}
-
-void	ft_rrb(t_stack_b **stack_b)
-{
-	t_stack_b	*temp;
-	t_stack_b	*last;
-
-	temp = *stack_b;
-	while (temp->next)
-	{
-		if (temp->next->next == NULL)
-			last = temp;
-		temp = temp->next;
-	}
-	temp->next = *stack_b;
-	*stack_b = temp;
-	last->next = NULL;
-}
-
-void	ft_rrr(t_list **list, t_stack_b **stack_b)
-{
-	ft_rra(list);
-	ft_rrb(stack_b);
+	ft_ra_help(stack_a);
+	ft_rb_help(stack_b);
+	write (1, "rr\n", 3);
 }
