@@ -55,7 +55,6 @@ int	main(int argc, char **argv)
 	t_stack		*stack_b;
 
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
-
 	if (!stack_b)
 		return (0);
 	ft_errors_numbers(argc, argv);

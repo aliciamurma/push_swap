@@ -20,13 +20,20 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 	t_stack		*temp_a;
 	t_stack		*temp_b;
 
-	temp_a = *stack_a;
 	temp_b = *stack_b;
-	if (temp_b->next == NULL)
-		return ;
-	*stack_a = *stack_b;
-	*stack_b = temp_b->next;
-	temp_b->next = temp_a->next;
+	temp_a = *stack_a;
+	if (temp_a->next == NULL)
+	{
+		*stack_a = *stack_b;
+		*stack_b = temp_b->next;
+		temp_b->next = temp_a->next;
+	}
+	else
+	{
+		*stack_a = *stack_b;
+		*stack_b = temp_b->next;
+		temp_b->next = temp_a;
+	}
 	write (1, "pa\n", 3);
 }
 /*
