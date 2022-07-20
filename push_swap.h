@@ -17,21 +17,22 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
-/*
-typedef struct s_stack
-{
-	int					len;
-	t_stack			*bottom;
-	t_stack			*first;
-}	t_stack;
-*/
+
 typedef struct s_stack
 {
 	int					data;
 	int					index;
-	int					len;
 	struct s_stack		*next;
 }	t_stack;
+
+typedef struct s_list
+{
+	int				len;
+	t_stack 		*stack_a;
+	t_stack 		*stack_b;
+	t_stack			*last;
+	t_stack			*first;
+}	t_list;
 
 
 //UTILS
@@ -42,7 +43,6 @@ void		ft_putchar(char c);
 char		*ft_itoa(int n);
 int			ft_strncmp(char *s1, char *s2);
 size_t		ft_strlen(char *str);
-void	ft_lstdelone(t_stack **stack_a);
 
 //ERRORES
 void		ft_errors_numbers(int argc, char **argv);
@@ -59,6 +59,7 @@ void		ft_two_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_three_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_four_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_five_num(t_stack **stack_a, t_stack **stack_b);
+void		ft_more_num(t_list *list);
 
 //MOVIMIENTOS EN LOS STACKS
 void		ft_sa(t_stack **stack_a);

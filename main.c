@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+// https://github.com/anaiel/push_swap
+
 //TENEMOS QUE CREAR UN TEMPORAL PORQUE UNA VEZ TENGAMOS LA CABEZA
 //DE LA stack_aA, NO LA PODEMOS PERDER. MODIFICAMOS EL TEMP Y DESPUES
 //SE LO ANADIMOS A LA stack_aA
@@ -51,34 +53,34 @@ t_stack	*ft_create_stack_a(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_stack		*stack_a;
-	t_stack		*stack_b;
+	t_list		list;
 
-	stack_b = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack_b)
-		return (0);
+	// stack_b = (t_stack *)malloc(sizeof(t_stack));
+	// if (!stack_b)
+	// 	return (0);
+	list.stack_b = NULL;
 	ft_errors_numbers(argc, argv);
-	stack_a = ft_create_stack_a(argc, argv);
+	list.stack_a = ft_create_stack_a(argc, argv);
 	if  (argc == 3)
-		ft_two_num(&stack_a, &stack_b);
+		ft_two_num(&list.stack_a, &list.stack_b);
 	if  (argc == 4)
-		ft_three_num(&stack_a, &stack_b);
+		ft_three_num(&list.stack_a, &list.stack_b);
 	if  (argc == 5)
-		ft_four_num(&stack_a, &stack_b);
+		ft_four_num(&list.stack_a, &list.stack_b);
 	if  (argc == 6)
-		ft_five_num(&stack_a, &stack_b);
-	// if  (argc > 6)
-	// 	ft_more_argc();
-	while (stack_a)
+		ft_five_num(&list.stack_a, &list.stack_b);
+	if  (argc > 6)
+		ft_more_num(&list);
+	while (list.stack_a)
 	{
-		printf("%d\n", stack_a->data);
-		stack_a = stack_a->next;
+		printf("%d\n", list.stack_a->data);
+		list.stack_a = list.stack_a->next;
 	}
 	printf("\n");
-	while (stack_b)
+	while (list.stack_b)
 	{
-		printf("%d\n", stack_b->data);
-		stack_b = stack_b->next;
+		printf("%d\n", list.stack_b->data);
+		list.stack_b = list.stack_b->next;
 	}
 	return (0);
 }

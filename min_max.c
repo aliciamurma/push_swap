@@ -59,7 +59,6 @@ int	ft_max(t_stack *stack_a)
 			nbr = temp->data;
 		temp = temp->next;
 		cont++;
-		//printf("EL INDEX ES%d\n\n", temp->index);
 	}
 	temp = stack_a;
 	while (temp)
