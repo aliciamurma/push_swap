@@ -11,45 +11,18 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-/*
-int	ft_max(t_stack *stack_a)
-{
-	t_stack	*temp;
-	int		nbr;
-
-	temp = stack_a;
-	nbr = 0;
-	while (temp)
-	{
-		if (nbr == 0)
-			nbr = temp->data;
-		if (nbr < temp->data)
-			nbr = temp->data;
-		temp = temp->next;
-	}
-	temp = stack_a;
-	printf("MAX == (%i)\n", nbr);
-	while (temp)
-	{
-		printf("EL INDEX DEL NUMERO %d ES %d\n", temp->data, temp->index);
-		if (nbr == temp->data)
-			return (temp->index);
-		temp = temp->next;
-	}
-	return  (0);
-}*/
-
-
-int	ft_max(t_stack *stack_a)
+//TENGO QUE ASEGURARME DE QUE HATA ALGO EN EL STACK A
+void	ft_max_a(t_list *list)
 {
 	int 	cont;
-	t_stack	*temp;
 	int		nbr;
+	t_stack	*temp;
 
 	cont = 1;
-	temp = stack_a;
 	nbr = 0;
+	temp = list->stack_a;
+	if (list->stack_a == NULL)
+		return ;
 	while (temp)
 	{
 		temp->index = cont;
@@ -59,26 +32,63 @@ int	ft_max(t_stack *stack_a)
 			nbr = temp->data;
 		temp = temp->next;
 		cont++;
+		list->len_a = cont;
 	}
-	temp = stack_a;
+	temp = list->stack_a;
 	while (temp)
 	{
 		if (nbr == temp->data)
-			return (temp->index);
+		{
+			list->max_a = temp->index;
+			return ;
+		}
 		temp = temp->next;
 	}
-	return  (0);
 }
 
-int	ft_min(t_stack *stack_a)
+void	ft_max_b(t_list *list)
 {
-	int		cont;
-	t_stack	*temp;
+	int 	cont;
 	int		nbr;
+	t_stack	*temp;
 
 	cont = 1;
-	temp = stack_a;
 	nbr = 0;
+	temp = list->stack_b;
+	if (list->stack_b == NULL)
+		return ;
+	while (temp)
+	{
+		temp->index = cont;
+		if (nbr == 0)
+			nbr = temp->data;
+		if (nbr < temp->data)
+			nbr = temp->data;
+		temp = temp->next;
+		cont++;
+		list->len_b = cont;
+	}
+	temp = list->stack_a;
+	while (temp)
+	{
+		if (nbr == temp->data)
+		{
+			list->max_b = temp->index;
+			return ;
+		}
+		temp = temp->next;
+	}
+}
+
+void	ft_min_a(t_list *list)
+{
+	int		cont;
+	int		nbr;
+	t_stack	*temp;
+
+	cont = 1;
+	nbr = 0;
+	temp = list->stack_a;
 	while (temp)
 	{
 		temp->index = cont;
@@ -88,44 +98,58 @@ int	ft_min(t_stack *stack_a)
 			nbr = temp->data;
 		temp = temp->next;
 		cont++;
+		list->len_a = cont;
 	}
-	temp = stack_a;
+	temp = list->stack_a;
 	while (temp)
 	{
-		if (temp->data == nbr)
-			return (temp->index);
+		if (nbr == temp->data)
+		{
+			list->min_a = temp->index;
+			return ;
+		}
 		temp = temp->next;
 	}
-	return  (0);
 }
 
-/*
-int	ft_min(t_stack *stack_a)
+void	ft_min_b(t_list *list)
 {
-	t_stack	*nodo;
-	t_stack	*temp;
+	int		cont;
 	int		nbr;
+	t_stack	*temp;
 
-	temp = stack_a;
+	cont = 1;
 	nbr = 0;
+	temp = list->stack_b;
+	if (list->stack_b == NULL)
+		return ;
 	while (temp)
 	{
-		nodo = (t_stack *)malloc(sizeof(t_stack));
-		if (!nodo)
-			return (0);
+		temp->index = cont;
 		if (nbr == 0)
 			nbr = temp->data;
 		if (nbr > temp->data)
 			nbr = temp->data;
 		temp = temp->next;
+		cont++;
+		list->len_b = cont;
 	}
-	temp = stack_a;
+	temp = list->stack_b;
 	while (temp)
 	{
-		if (temp->data == nbr)
-			return (temp->index);
+		if (nbr == temp->data)
+		{
+			list->min_b = temp->index;
+			return ;
+		}
 		temp = temp->next;
 	}
-	return  (0);
 }
-*/
+
+void	ft_min_max(t_list *list)
+{
+	ft_min_a(list);
+	ft_max_a(list);
+	ft_min_b(list);
+	ft_max_b(list);
+}

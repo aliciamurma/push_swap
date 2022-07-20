@@ -11,17 +11,21 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+// https://github.com/anaiel/push_swap
 void		ft_more_num(t_list *list)
 {
 	t_stack	*temp;
-	int		min;
-	int		max;
 	int		mid_len;
+	int		cont;
 	
+	cont = 0;
 	temp = list->stack_a;
-	min = ft_min(list->stack_a);
-	max = ft_max(list->stack_a);
-	mid_len = list->len / 2;
-	// printf("mid len is %d\n", temp->last->index);
+	ft_min_max(list);
+	mid_len = list->len_a / 2;
+	while (cont <= len && temp)
+	{
+		if (list->temp->data > list->temp->next->data)
+			ft_ra(list->stack_a);
+	}
+	printf("mid len is %d\n", mid_len);
 }

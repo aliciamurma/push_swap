@@ -27,7 +27,12 @@ typedef struct s_stack
 
 typedef struct s_list
 {
-	int				len;
+	int				len_a;
+	int				len_b;
+	int				max_a;
+	int				min_a;
+	int				max_b;
+	int				min_b;
 	t_stack 		*stack_a;
 	t_stack 		*stack_b;
 	t_stack			*last;
@@ -53,13 +58,20 @@ void		ft_int_max_value(char **argv);
 //ALGORITMO
 int			main(int argc, char **argv);
 t_stack		*ft_create_stack_a(int argc, char **argv);
-int			ft_min(t_stack *stack_a);
-int			ft_max(t_stack *stack_a);
+int			ft_min_five(t_stack *stack_a);
+int			ft_max_five(t_stack *stack_a);
 void		ft_two_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_three_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_four_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_five_num(t_stack **stack_a, t_stack **stack_b);
+
+//MAS DE CINCO NUMEROS
 void		ft_more_num(t_list *list);
+void		ft_max_a(t_list *list);
+void		ft_min_a(t_list *list);
+void		ft_max_b(t_list *list);
+void		ft_min_b(t_list *list);
+void		ft_min_max(t_list *list);
 
 //MOVIMIENTOS EN LOS STACKS
 void		ft_sa(t_stack **stack_a);
