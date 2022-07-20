@@ -65,8 +65,8 @@ int	main(int argc, char **argv)
 		ft_three_num(&stack_a, &stack_b);
 	if  (argc == 5)
 		ft_four_num(&stack_a, &stack_b);
-	// if  (argc == 6)
-	// 	ft_five_num(&stack_a, &stack_b);
+	if  (argc == 6)
+		ft_five_num(&stack_a, &stack_b);
 	// if  (argc > 6)
 	// 	ft_more_argc();
 	while (stack_a)

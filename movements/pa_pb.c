@@ -61,11 +61,18 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 	t_stack		*temp_b;
 
 	temp_a = *stack_a;
-	if (temp_a->next == NULL)
-		return ;
 	temp_b = *stack_b;
-	*stack_b = *stack_a;
-	*stack_a = temp_a->next;
-	temp_a->next = temp_b->next;
+	if (temp_a->next == NULL)
+	{
+		*stack_b = *stack_a;
+		*stack_a = temp_a->next;
+		temp_a->next = temp_b->next;
+	}
+	else
+	{
+		*stack_b = *stack_a;
+		*stack_a = temp_a->next;
+		temp_a->next = temp_b;
+	}
 	write (1, "pb\n", 3);
 }

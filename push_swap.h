@@ -58,7 +58,7 @@ int			ft_max(t_stack *stack_a);
 void		ft_two_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_three_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_four_num(t_stack **stack_a, t_stack **stack_b);
-//void		ft_five_num(t_stack **stack_a, t_stack **stack_b);
+void		ft_five_num(t_stack **stack_a, t_stack **stack_b);
 
 //MOVIMIENTOS EN LOS STACKS
 void		ft_sa(t_stack **stack_a);
