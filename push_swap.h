@@ -27,6 +27,10 @@ typedef struct s_stack
 
 typedef struct s_list
 {
+	int				average_a;
+	int				average_b;
+	int				median_a;
+	int				median_b;
 	int				len_a;
 	int				len_b;
 	int				max_a;
@@ -64,14 +68,24 @@ void		ft_two_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_three_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_four_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_five_num(t_stack **stack_a, t_stack **stack_b);
+void		ft_more_num_a(t_list *list);
+void		ft_continue_more_a(t_list *list);
+void		ft_continue_more_more_a(t_list *list);
+void		ft_more_num_b(t_list *list);
+void		ft_continue_more_b(t_list *list);
+void		ft_continue_more_more_b(t_list *list);
+void		ft_quick_sort(t_list *list);
 
 //MAS DE CINCO NUMEROS
-void		ft_more_num(t_list *list);
 void		ft_max_a(t_list *list);
 void		ft_min_a(t_list *list);
 void		ft_max_b(t_list *list);
 void		ft_min_b(t_list *list);
 void		ft_min_max(t_list *list);
+void		ft_average_a(t_list *list);
+void		ft_average_b(t_list *list);
+void		ft_median_a(t_list * list);
+void		ft_median_b(t_list * list);
 
 //MOVIMIENTOS EN LOS STACKS
 void		ft_sa(t_stack **stack_a);

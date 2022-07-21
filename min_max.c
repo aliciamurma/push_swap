@@ -18,7 +18,7 @@ void	ft_max_a(t_list *list)
 	int		nbr;
 	t_stack	*temp;
 
-	cont = 1;
+	cont = 0;
 	nbr = 0;
 	temp = list->stack_a;
 	if (list->stack_a == NULL)
@@ -52,7 +52,7 @@ void	ft_max_b(t_list *list)
 	int		nbr;
 	t_stack	*temp;
 
-	cont = 1;
+	cont = 0;
 	nbr = 0;
 	temp = list->stack_b;
 	if (list->stack_b == NULL)

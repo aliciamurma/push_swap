@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 	if  (argc == 6)
 		ft_five_num(&list.stack_a, &list.stack_b);
 	if  (argc > 6)
-		ft_more_num(&list);
+		ft_quick_sort(&list);
 	while (list.stack_a)
 	{
 		printf("%d\n", list.stack_a->data);
