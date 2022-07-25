@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-// https://github.com/anaiel/push_swap
-
 //TENEMOS QUE CREAR UN TEMPORAL PORQUE UNA VEZ TENGAMOS LA CABEZA
 //DE LA stack_aA, NO LA PODEMOS PERDER. MODIFICAMOS EL TEMP Y DESPUES
 //SE LO ANADIMOS A LA stack_aA
@@ -51,26 +49,36 @@ t_stack	*ft_create_stack_a(int argc, char **argv)
 	return (stack_a);
 }
 
+void	ft_more_five(t_list *list)
+{
+	ft_game_number(list);
+	if (ft_check_if_sort(list) == 1)
+		exit (0);
+	list->nbr = 0;
+	ft_game_number(list);
+	ft_biggest(list);
+	ft_big_sort(list);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list		list;
 
-	// stack_b = (t_stack *)malloc(sizeof(t_stack));
-	// if (!stack_b)
-	// 	return (0);
 	list.stack_b = NULL;
 	ft_errors_numbers(argc, argv);
 	list.stack_a = ft_create_stack_a(argc, argv);
+	if (ft_check_if_sort(&list) == 1)
+		return (0);
 	if  (argc == 3)
 		ft_two_num(&list.stack_a, &list.stack_b);
-	if  (argc == 4)
+	else if  (argc == 4)
 		ft_three_num(&list.stack_a, &list.stack_b);
-	if  (argc == 5)
+	else if  (argc == 5)
 		ft_four_num(&list.stack_a, &list.stack_b);
-	if  (argc == 6)
+	else if  (argc == 6)
 		ft_five_num(&list.stack_a, &list.stack_b);
-	if  (argc > 6)
-		ft_quick_sort(&list);
+	else
+		ft_more_five(&list);
 	while (list.stack_a)
 	{
 		printf("%d\n", list.stack_a->data);

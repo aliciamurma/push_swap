@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//TENGO QUE ASEGURARME DE QUE HATA ALGO EN EL STACK A
+
 void	ft_max_a(t_list *list)
 {
 	int 	cont;

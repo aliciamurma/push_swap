@@ -36,8 +36,6 @@ void	ft_three_num(t_stack **stack_a, t_stack **stack_b)
 	temp = *stack_a;
 	min = ft_min_five(*stack_a);
 	max = ft_max_five(*stack_a);
-	printf("ESTO ES MIN %d\n", min);
-	printf("ESTO ES MAX %d\n", max);
 	if (max == 1 && min == 2)
 		ft_ra(stack_a);
 	else if (min == 1 && max == 2)

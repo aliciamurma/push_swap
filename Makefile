@@ -20,7 +20,7 @@ SRC_UTILS = utils/ft_atoi.c utils/ft_itoa.c utils/ft_putstr.c utils/ft_strncmp.c
 
 SRC_FIVE = min_max_five.c five_num.c
 
-SRC_ALGOR = main.c check.c min_max.c more_num.c more_num_continue.c median_average.c
+SRC_ALGOR = main.c check.c min_max.c more_num.c median_average.c
 
 SRC = $(SRC_ALGOR) $(SRC_FIVE) $(SRC_UTILS) $(SRC_MOVEMENTS)
 OBJ = $(SRC:.c=.o)

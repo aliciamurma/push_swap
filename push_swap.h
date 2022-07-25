@@ -22,11 +22,17 @@ typedef struct s_stack
 {
 	int					data;
 	int					index;
+	int					game_number;
 	struct s_stack		*next;
 }	t_stack;
 
 typedef struct s_list
 {
+	int				max_bits;
+	int				bigger;
+	int				nbr;
+	int				bit;
+	int				max_num;
 	int				average_a;
 	int				average_b;
 	int				median_a;
@@ -68,13 +74,11 @@ void		ft_two_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_three_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_four_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_five_num(t_stack **stack_a, t_stack **stack_b);
-void		ft_more_num_a(t_list *list);
-void		ft_continue_more_a(t_list *list);
-void		ft_continue_more_more_a(t_list *list);
-void		ft_more_num_b(t_list *list);
-void		ft_continue_more_b(t_list *list);
-void		ft_continue_more_more_b(t_list *list);
-void		ft_quick_sort(t_list *list);
+int			ft_check_if_sort(t_list *list);
+void		ft_big_sort(t_list *list);
+void		ft_biggest(t_list *list);
+void		ft_max_bit(t_list *list);
+void		ft_game_number(t_list *list);
 
 //MAS DE CINCO NUMEROS
 void		ft_max_a(t_list *list);

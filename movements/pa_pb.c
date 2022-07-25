@@ -20,59 +20,47 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 	t_stack		*temp_a;
 	t_stack		*temp_b;
 
-	temp_b = *stack_b;
+	temp_b = (*stack_b)->next;
+	if (*stack_b == NULL)
+		return ;
 	temp_a = *stack_a;
-	if (temp_a->next == NULL)
+	if (*stack_a == NULL)
 	{
 		*stack_a = *stack_b;
-		*stack_b = temp_b->next;
-		temp_b->next = temp_a->next;
+		(*stack_a)->next = NULL;
+		*stack_b = temp_b;
 	}
 	else
 	{
 		*stack_a = *stack_b;
-		*stack_b = temp_b->next;
-		temp_b->next = temp_a;
+		(*stack_a)->next = temp_a;
+		*stack_b = temp_b;
 	}
 	write (1, "pa\n", 3);
 }
-/*
-void	ft_pb(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack		*temp_a;
-	t_stack		*temp_a2;
-	t_stack		*temp_b;
-
-	temp_a = *stack_a;
-	temp_a2 = *stack_a;
-	temp_b = *stack_b;
-
-	temp_a->next = temp_b->next;
-	*stack_b = temp_a;
-	temp_a = temp_a2->next;
-
-	write (1, "pb\n", 3);
-}
-*/
 
 void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack		*temp_a;
 	t_stack		*temp_b;
 
-	temp_a = *stack_a;
+	temp_a = (*stack_a)->next;
+	if (*stack_a == NULL)
+		return ;
 	temp_b = *stack_b;
-	if (temp_a->next == NULL)
+	if (*stack_b == NULL)
 	{
 		*stack_b = *stack_a;
-		*stack_a = temp_a->next;
-		temp_a->next = temp_b->next;
+		(*stack_b)->next = NULL;
+		*stack_a = temp_a;
+		// printf("EL SIGUIENTE ELEMENTO DE MI STACK A ES %d\n", (*stack_a)->data);
+		// printf("EL SIGUIENTE ELEMENTO DE MI STACK A ES %d\n", (*stack_a)->next->data);
 	}
 	else
 	{
 		*stack_b = *stack_a;
-		*stack_a = temp_a->next;
-		temp_a->next = temp_b;
+		(*stack_b)->next = temp_b;
+		*stack_a = temp_a;
 	}
 	write (1, "pb\n", 3);
 }
