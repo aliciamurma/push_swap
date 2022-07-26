@@ -12,14 +12,15 @@
 
 #include "push_swap.h"
 
-int		ft_check_if_sort(t_list *list)
+int	ft_check_if_sort(t_list *list)
 {
 	t_stack	*temp;
 
 	temp = list->stack_a;
 	while (temp)
 	{
-		if ((temp->next && (temp->data < temp->next->data)) || temp->next == NULL)
+		if ((temp->next && (temp->data < temp->next->data))
+			|| temp->next == NULL)
 			temp = temp->next;
 		else
 			return (0);
@@ -52,13 +53,14 @@ void	ft_biggest(t_list *list)
 	list->max_num = 0;
 	while (temp)
 	{
-		if (temp->next && (temp->data < temp->next->data) && (temp->next->data > list->max_num))
-		 		list->max_num = temp->next->data;
+		if (temp->next && (temp->game_number < temp->next->game_number)
+			&& (temp->next->game_number > list->max_num))
+				list->max_num = temp->next->game_number;
 		temp = temp->next;
 	}
 	temp = list->stack_a;
-	if (temp->data > list->max_num)
-		list->max_num = temp->data;
+	if (temp->game_number > list->max_num)
+		list->max_num = temp->game_number;
 	ft_max_bit(list);
 }
 
@@ -68,9 +70,9 @@ void	ft_big_sort(t_list *list)
 
 	temp = list->stack_a;
 	ft_min_max(list);
-	while (temp && list->len_a > 0)
+	while (list->len_a > 0)
 	{
-		if ((temp->data & (1 << list->bit)) == 0)
+		if ((temp->game_number & (1 << list->bit)) == 0)
 		{
 			ft_pb(&list->stack_a, &list->stack_b);
 			temp = list->stack_a;
@@ -86,13 +88,11 @@ void	ft_big_sort(t_list *list)
 		ft_pa(&list->stack_a, &list->stack_b);
 		list->len_b--;
 	}
-		printf("\n\n");
 	list->bit++;
-	list->max_bits--;
-	if (list->max_bits > 0)
+	ft_game_number(list);
+	if (list->bit != list->max_bits)
 		ft_big_sort(list);
 }
-
 
 void	ft_game_number(t_list *list)
 {

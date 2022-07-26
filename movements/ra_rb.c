@@ -27,6 +27,7 @@ void	ft_ra_help(t_stack **stack_a)
 	while (temp->next)
 	{
 		temp->data = temp->next->data;
+		temp->game_number = temp->next->game_number;
 		temp = temp->next;
 	}
 	temp->data = data;

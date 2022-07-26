@@ -12,9 +12,11 @@
 
 #include "push_swap.h"
 
+//void	ft_assing_index(t_list *list)
+
 void	ft_max_a(t_list *list)
 {
-	int 	cont;
+	int		cont;
 	int		nbr;
 	t_stack	*temp;
 
@@ -48,7 +50,7 @@ void	ft_max_a(t_list *list)
 
 void	ft_max_b(t_list *list)
 {
-	int 	cont;
+	int		cont;
 	int		nbr;
 	t_stack	*temp;
 

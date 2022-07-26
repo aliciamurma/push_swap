@@ -33,22 +33,17 @@ typedef struct s_list
 	int				nbr;
 	int				bit;
 	int				max_num;
-	int				average_a;
-	int				average_b;
-	int				median_a;
-	int				median_b;
 	int				len_a;
 	int				len_b;
 	int				max_a;
 	int				min_a;
 	int				max_b;
 	int				min_b;
-	t_stack 		*stack_a;
-	t_stack 		*stack_b;
+	t_stack			*stack_a;
+	t_stack			*stack_b;
 	t_stack			*last;
 	t_stack			*first;
 }	t_list;
-
 
 //UTILS
 int			ft_atoi(char *str);
@@ -86,10 +81,6 @@ void		ft_min_a(t_list *list);
 void		ft_max_b(t_list *list);
 void		ft_min_b(t_list *list);
 void		ft_min_max(t_list *list);
-void		ft_average_a(t_list *list);
-void		ft_average_b(t_list *list);
-void		ft_median_a(t_list * list);
-void		ft_median_b(t_list * list);
 
 //MOVIMIENTOS EN LOS STACKS
 void		ft_sa(t_stack **stack_a);

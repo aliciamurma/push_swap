@@ -20,7 +20,7 @@
 //EL INDICE VA LIGADO AL NUEVO NODO CREADO, NO AL TEMP
 t_stack	*ft_create_stack_a(int argc, char **argv)
 {
-	int	start;
+	int		start;
 	t_stack	*stack_a;
 	t_stack	*temp;
 	t_stack	*nodo;
@@ -51,11 +51,10 @@ t_stack	*ft_create_stack_a(int argc, char **argv)
 
 void	ft_more_five(t_list *list)
 {
-	ft_game_number(list);
 	if (ft_check_if_sort(list) == 1)
 		exit (0);
-	list->nbr = 0;
 	ft_game_number(list);
+	list->nbr = 0;
 	ft_biggest(list);
 	ft_big_sort(list);
 }
@@ -69,22 +68,24 @@ int	main(int argc, char **argv)
 	list.stack_a = ft_create_stack_a(argc, argv);
 	if (ft_check_if_sort(&list) == 1)
 		return (0);
-	if  (argc == 3)
+	if (argc == 3)
 		ft_two_num(&list.stack_a, &list.stack_b);
-	else if  (argc == 4)
+	else if (argc == 4)
 		ft_three_num(&list.stack_a, &list.stack_b);
-	else if  (argc == 5)
+	else if (argc == 5)
 		ft_four_num(&list.stack_a, &list.stack_b);
-	else if  (argc == 6)
+	else if (argc == 6)
 		ft_five_num(&list.stack_a, &list.stack_b);
 	else
 		ft_more_five(&list);
+	printf("STACK A\n");
 	while (list.stack_a)
 	{
 		printf("%d\n", list.stack_a->data);
 		list.stack_a = list.stack_a->next;
 	}
-	printf("\n");
+	printf("\n\n");
+	printf("STACK B\n");
 	while (list.stack_b)
 	{
 		printf("%d\n", list.stack_b->data);
@@ -92,3 +93,4 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
+

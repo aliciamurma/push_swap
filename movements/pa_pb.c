@@ -53,8 +53,6 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 		*stack_b = *stack_a;
 		(*stack_b)->next = NULL;
 		*stack_a = temp_a;
-		// printf("EL SIGUIENTE ELEMENTO DE MI STACK A ES %d\n", (*stack_a)->data);
-		// printf("EL SIGUIENTE ELEMENTO DE MI STACK A ES %d\n", (*stack_a)->next->data);
 	}
 	else
 	{

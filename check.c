@@ -26,7 +26,8 @@ void	ft_errors_numbers(int argc, char **argv)
 		cont2 = 0;
 		while (argv[cont1][cont2])
 		{
-			if ((argv[cont1][cont2] == '-' && (argv[cont1][cont2 + 1] >= '0' && argv[cont1][cont2 + 1] <= '9'))
+			if ((argv[cont1][cont2] == '-' && (argv[cont1][cont2 + 1] >= '0'
+				&& argv[cont1][cont2 + 1] <= '9'))
 				|| (argv[cont1][cont2] >= '0' && argv[cont1][cont2] <= '9'))
 				cont2++;
 			else
@@ -61,12 +62,13 @@ void	ft_errors_repeat(char **argv)
 
 void	ft_int_max_value(char **argv)
 {
-	int cont1;
+	int	cont1;
 
 	cont1 = 1;
 	while (argv[cont1])
 	{
-		if (ft_atoi_plus(argv[cont1]) >= 2147483647 || ft_atoi_plus(argv[cont1]) <= -2147483648)
+		if (ft_atoi_plus(argv[cont1]) >= 2147483647
+			|| ft_atoi_plus(argv[cont1]) <= -2147483648)
 			ft_putstr_error("\nError\nValores muy altos\n\n");
 		else
 			cont1++;

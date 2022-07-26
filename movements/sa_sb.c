@@ -36,7 +36,7 @@ void	ft_sa(t_stack **stack_a)
 void	ft_sb_help(t_stack **stack_b)
 {
 	t_stack	*temp;
-	int			data;
+	int		data;
 
 	temp = *stack_b;
 	if (temp->next == NULL)

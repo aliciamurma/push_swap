@@ -14,7 +14,7 @@
 
 int	ft_max_five(t_stack *stack_a)
 {
-	int 	cont;
+	int		cont;
 	t_stack	*temp;
 	int		nbr;
 
@@ -38,7 +38,7 @@ int	ft_max_five(t_stack *stack_a)
 			return (temp->index);
 		temp = temp->next;
 	}
-	return  (0);
+	return (0);
 }
 
 int	ft_min_five(t_stack *stack_a)
@@ -67,5 +67,5 @@ int	ft_min_five(t_stack *stack_a)
 			return (temp->index);
 		temp = temp->next;
 	}
-	return  (0);
+	return (0);
 }

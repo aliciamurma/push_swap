@@ -58,9 +58,9 @@ int	ft_atoi(char *str)
 
 long int	ft_atoi_plus(char *str)
 {
-	int	cont1;
+	int			cont1;
 	long int	almacen;
-	int	neg;
+	int			neg;
 
 	cont1 = 0;
 	almacen = 0;
