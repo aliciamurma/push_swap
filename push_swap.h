@@ -28,6 +28,7 @@ typedef struct s_stack
 
 typedef struct s_list
 {
+	int				len_a2;
 	int				max_bits;
 	int				bigger;
 	int				nbr;
@@ -81,6 +82,10 @@ void		ft_min_a(t_list *list);
 void		ft_max_b(t_list *list);
 void		ft_min_b(t_list *list);
 void		ft_min_max(t_list *list);
+void		ft_assing_index_max_a(t_list *list, int nbr);
+void		ft_assing_index_max_b(t_list *list, int nbr);
+void		ft_assing_index_min_a(t_list *list, int nbr);
+void		ft_assing_index_min_b(t_list *list, int nbr);
 
 //MOVIMIENTOS EN LOS STACKS
 void		ft_sa(t_stack **stack_a);
