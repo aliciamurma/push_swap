@@ -61,7 +61,7 @@ void		ft_putstr_error(char *s);
 void		ft_errors_repeat(char **argv);
 void		ft_int_max_value(char **argv);
 
-//ALGORITMO
+//ALGORITMO PARA CINCO
 int			main(int argc, char **argv);
 t_stack		*ft_create_stack_a(int argc, char **argv);
 int			ft_min_five(t_stack *stack_a);
@@ -70,11 +70,6 @@ void		ft_two_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_three_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_four_num(t_stack **stack_a, t_stack **stack_b);
 void		ft_five_num(t_stack **stack_a, t_stack **stack_b);
-int			ft_check_if_sort(t_list *list);
-void		ft_big_sort(t_list *list);
-void		ft_biggest(t_list *list);
-void		ft_max_bit(t_list *list);
-void		ft_game_number(t_list *list);
 
 //MAS DE CINCO NUMEROS
 void		ft_max_a(t_list *list);
@@ -86,6 +81,13 @@ void		ft_assing_index_max_a(t_list *list, int nbr);
 void		ft_assing_index_max_b(t_list *list, int nbr);
 void		ft_assing_index_min_a(t_list *list, int nbr);
 void		ft_assing_index_min_b(t_list *list, int nbr);
+int			ft_check_if_sort(t_list *list);
+void		ft_big_sort(t_list *list);
+void		ft_biggest(t_list *list);
+void		ft_max_bit(t_list *list);
+void		ft_game_number(t_list *list);
+void		ft_more_five(t_list *list);
+void		ft_free(t_list *list);
 
 //MOVIMIENTOS EN LOS STACKS
 void		ft_sa(t_stack **stack_a);

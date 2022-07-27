@@ -31,7 +31,7 @@ void	ft_errors_numbers(int argc, char **argv)
 				|| (argv[cont1][cont2] >= '0' && argv[cont1][cont2] <= '9'))
 				cont2++;
 			else
-				ft_putstr_error("\nError\nDame numeros, esto no se que es\n\n");
+				ft_putstr_error("Error\n");
 		}
 		cont1++;
 	}
@@ -52,7 +52,7 @@ void	ft_errors_repeat(char **argv)
 		while (argv[cont2])
 		{
 			if (ft_strncmp(argv[cont1], argv[cont2]) == 0)
-				ft_putstr_error("\nError\nNumeros repetidos\n\n");
+				ft_putstr_error("Error\n");
 			else
 				cont2++;
 		}
@@ -69,7 +69,7 @@ void	ft_int_max_value(char **argv)
 	{
 		if (ft_atoi_plus(argv[cont1]) >= 2147483647
 			|| ft_atoi_plus(argv[cont1]) <= -2147483648)
-			ft_putstr_error("\nError\nValores muy altos\n\n");
+			ft_putstr_error("Error\n");
 		else
 			cont1++;
 	}
