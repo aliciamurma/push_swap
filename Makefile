@@ -6,7 +6,7 @@
 #    By: amurcia- <amurcia-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/11 12:36:39 by amurcia-          #+#    #+#              #
-#    Updated: 2022/12/25 20:38:57 by amurcia-         ###   ########.fr        #
+#    Updated: 2022/12/25 20:42:31 by amurcia-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,9 @@ run: all
 
 leaks: $(BIN)
 	@leaks -atExit -- ./$(BIN) 12 76 94 73 -4
+
+norm:
+	@norminette src/* 
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
