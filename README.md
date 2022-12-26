@@ -47,7 +47,19 @@ Compile code
 ```shell
 make
 ```
-Ejecute push_swap
+Execute default push_swap
+```shell
+make run
+```
+Execute push_swap
 ```shell
 ./push_spwap [as many numbers as you want]
+```
+Look for leaks
+```shell
+make leaks
+```
+Norminette
+```shell
+make norm
 ```
