@@ -43,6 +43,13 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 	write (1, "pa\n", 3);
 }
 
+/**
+ * @brief pb toma el primer elemento del stack A y lo pone encima del stack B
+ * No hace nada si el stack A está vacío
+ * 
+ * @param stack_a 
+ * @param stack_b 
+ */
 void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack		*temp_a;
